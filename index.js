@@ -39,12 +39,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(cors());
 // Middleware
 app.use(morgan("dev"));
-app.use(expressSession({
-    secret: "qasdrtgbjiuygfvbnmk",
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false } // Set to true if using HTTPS
-}));
+
 // Serve static files like CSS, JS, and images from the "public" folder
 app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // <-- Corrected static folder path
 if (process.env.NODE_ENV === "production"){
